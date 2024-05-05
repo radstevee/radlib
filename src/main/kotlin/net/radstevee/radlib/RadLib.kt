@@ -3,7 +3,7 @@ package net.radstevee.radlib
 import org.bukkit.plugin.java.JavaPlugin
 
 object RadLib {
-    internal lateinit var plugin: JavaPlugin
+    lateinit var plugin: JavaPlugin
 
     fun initialize(plugin: JavaPlugin) {
         plugin.logger.info("RadLib - Initialized!")
