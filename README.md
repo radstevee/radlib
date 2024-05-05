@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.radstevee:radlib:master-SNAPSHOT")
+    implementation("com.github.radstevee:radlib:1.0.1")
 }
 ```
 
