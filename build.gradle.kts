@@ -1,9 +1,9 @@
 plugins {
-    kotlin("jvm") version "1.9.23"
+    kotlin("jvm") version "2.0.0"
     `maven-publish`
 }
 
-group = "net.radstevee.radlib"
+group = "net.radstevee"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -28,6 +28,18 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
+        }
+    }
+
+    repositories {
+        maven {
+            name = "radPublic"
+            url = uri("https://maven.radsteve.net/public")
+
+            credentials {
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("RAD_MAVEN_USER")
+                password = project.findProperty("gpr.key") as String? ?: System.getenv("RAD_MAVEN_TOKEN")
+            }
         }
     }
 }
